@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,21 +15,23 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Movementation {
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private BigDecimal value;
+	
+	@Enumerated(EnumType.STRING)
 	private MovementType movementType;
 	private LocalDateTime date;
 	private String description;
-	
+
 	@ManyToOne
-	Account account;
-	
+	private Account account;
+
 	@ManyToMany
-	List<Category> categories; 
+	private List<Category> categories;
 
 	public List<Category> getCategories() {
 		return categories;
@@ -76,6 +80,5 @@ public class Movementation {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	
 
 }
