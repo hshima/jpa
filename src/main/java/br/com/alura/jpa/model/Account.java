@@ -46,4 +46,8 @@ public class Account {
 		this.balance = balance;
 	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
+
 }
