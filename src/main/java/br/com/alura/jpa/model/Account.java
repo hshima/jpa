@@ -12,6 +12,7 @@ public class Account {
 	private Integer agency;
 	private Integer number;
 	private String holder;
+	private Double balance;
 
 	public Integer getAgency() {
 		return agency;
@@ -35,6 +36,14 @@ public class Account {
 
 	public void setHolder(String holder) {
 		this.holder = holder;
+	}
+
+	public Double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
 	}
 
 }
